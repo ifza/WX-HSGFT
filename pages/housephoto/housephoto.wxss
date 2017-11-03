@@ -1,0 +1,61 @@
+/* pages/housephoto/housephoto.wxss */
+/* 上部分 */
+.house-photo .weui-panel__hd {
+    font-size:18px;
+    color:#000;
+}
+.house-photo .weui-panel__hd::after,
+.house-photo .weui-cell::before{
+    left:0;
+}
+.house-photo .weui-media-box__title{
+    position:relative;
+}
+.house-photo .weui-media-box__title .reduce-bar{
+    content:" ";
+    display:inline-block;
+    height:6px;
+    width:6px;
+    border-width:2px 2px 0 0;
+    border-color:#000;
+    border-style:solid;
+    transform:rotate(135deg);
+    position:relative;
+    top:-2px;
+    position:absolute;
+    top:50%;
+    margin-top:-4px;
+    right:2px;    
+}
+.house-photo .weui-media-box__title.reduce .reduce-bar{
+    /* transform:rotate(-45deg); */
+}
+.house-photo .weui-cell_link{
+    color:#707070;
+}
+
+/* 两列图片列表 */
+.two-list-outer{
+    margin:10px;
+}
+.two-list-outer > .list{
+    margin-right:-8px;
+    overflow:hidden;
+}
+.two-list-outer > .list .item{
+    box-sizing: border-box;
+    float: left;
+    width: 50%;
+    height:200px;
+    padding-right: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.two-list-outer > .list .item > .img{
+    display:block;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

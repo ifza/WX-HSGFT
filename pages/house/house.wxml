@@ -1,0 +1,91 @@
+<!-- 引入外部模板 -->
+<import src="../components/swiper/swiper.wxml"></import>
+<import src="../components/star/star.wxml"></import>
+
+<view class="page">
+  <view class="page__bd">
+      <view class="weui-tab">
+          <!-- tab切换按钮 -->
+          <view class="weui-navbar">
+              <block>
+                  <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on active' : ''}}">
+                      <view class="weui-navbar__title">
+                      </view>
+                      <image class="arrow bottom area {{areaActiveIndex == true ? 'active':''}}" data-id="1"></image>
+                      <view class="picker-wrap">
+                        <picker class="filter-area" bindchange="areaFilter" value="{{index}}" range="{{areaArr}}">
+                            <view class="picker">
+                                {{placeholderText}}{{areaArr[index]}}
+                            </view>
+                        </picker>
+                      </view>
+                  </view>
+              </block>
+              <block>
+                <view class="weui-navbar__item star {{isStarDesc && isStarTap ? 'desc' : 'order'}} {{isStarTap?'start':''}}" bindtap="starOrder">
+                    <view class="weui-navbar__title">{{tabs[1]}}
+                    </view>
+                    <image class="arrow top" data-id="1"></image>
+                    <image class="arrow bottom" data-id="2"></image>
+                </view>
+              </block>
+              <!-- 激活时的遮罩线 -->
+              <!-- <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view> -->
+          </view>
+
+          <view class="weui-tab__panel">
+              <!-- 区域内容 -->
+              <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                <!-- 使用swiper模板 -->
+                <template is="swiper" data="{{imgUrls}}"></template>
+
+                <!-- panel -->
+                <view class="weui-panel weui-panel_access"
+                 wx:if="{{panelList.length > 0}}">
+                    <view class="weui-panel__hd">房产列表</view>
+
+                    <view class="weui-panel__bd">
+                        <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active"
+                         wx:for="{{panelList}}" wx:for-index="idx" wx:key="idx"
+                         data-id="{{item.id}}"
+                         bindtap="naviToDetail">
+                            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                                <image class="weui-media-box__thumb" src="{{item.smallpic}}" />
+                            </view>
+                            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                                <view class="weui-media-box__title">
+                                    <view class="title-txt">{{item.name}}</view>
+                                    <view class="status online" wx:if="{{item.state.length > 0}}">{{item.state}}</view>
+                                    <!-- 评分星星组件使用 -->
+                                    <template is="star" data="{{star: item.star}}"></template>
+                                </view>
+                                <view class="weui-media-box__desc">{{item.info}}</view>
+                            </view>
+                        </view>
+                    </view>
+                    
+                    <view class="weui-panel__ft" wx:if="{{isHasMore}}" bindtap="loadMore">
+                        <view class="weui-cell weui-cell_access weui-cell_link">
+                            <view class="weui-cell__bd">查看更多</view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </view>
+                    </view>
+
+                </view>
+
+                <!-- 暂无数据提示 -->
+                <view class="weui-panel weui-panel_access"
+                wx:else>
+                    <view class="weui-panel__hd">房产列表</view>
+                    <view class="weui-panel__bd">
+                        <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                            <view class="empty-list">暂无数据</view>
+                        </view>
+                    </view>
+                </view>
+
+              </view>
+          </view>
+      </view>
+  </view>
+</view>

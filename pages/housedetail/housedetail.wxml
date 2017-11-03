@@ -1,0 +1,48 @@
+<!-- 引入模板组件 -->
+<import src="../components/star/star.wxml"></import>
+
+<view class="page">
+    <view class="weui-panel weui-panel_access house-detail">
+        <view class="weui-panel__hd align-center">楼盘详情</view>
+        <view class="weui-panel__bd">
+            <view class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text reduce">项目简介
+                    <view class="reduce-bar {{isMore?'more':''}}" bindtap="showMore"></view>
+                </view>
+                <view class="weui-media-box__desc {{isMore?'more':''}}">{{detail.info}}</view>
+            </view>
+        </view>
+        <view class="weui-panel__ft">
+            <view class="weui-cell weui-cell_access weui-cell_link"
+             wx:for="{{detail.param}}" wx:key="{{*this}}" wx:for-index="idx"
+             data-pid="{{item.id}}" data-id="{{detail.id}}"
+             bindtap="naviToPhoto">
+                <view class="weui-cell__bd">{{item.name}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+        </view>
+    </view>
+    
+    <!-- 推荐楼盘 -->
+    <view class="weui-panel weui-panel_access has-star">
+        <view class="weui-panel__hd align-center">推荐楼盘</view>
+        <view class="weui-panel__bd">
+            <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active"
+            wx:for="{{panelList}}" wx:key="*this"
+            bindtap="naviToDetail" data-id="{{item.id}}">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                    <image class="weui-media-box__thumb" src="{{item.smallpic}}" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                    <view class="weui-media-box__title">
+                        <view class="title-txt">{{item.name}}</view>
+                        <view class="status online">在售</view>
+                        <!-- 评分星星组件使用 -->
+                        <template is="star" data="{{star: item.star}}"></template>
+                    </view>
+                    <view class="weui-media-box__desc">{{item.info}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

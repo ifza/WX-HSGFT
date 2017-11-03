@@ -1,0 +1,4 @@
+/* pages/ordersuccess/ordersuccess.wxss */
+page{
+    background-color: #FFFFFF;
+}

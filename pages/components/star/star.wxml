@@ -1,0 +1,25 @@
+<!-- 评分星星组件 -->
+
+<!-- 绝对定位 -->
+<template name="star" >
+  <viw class="star-wrap">
+    <view class="list">
+      <view class="item full"
+       wx:for="{{star}}" wx:for-index="idx" wx:key="idx"></view>
+      <view class="item empty"
+       wx:for="{{5 - star}}" wx:for-index="idx" wx:key="idx"></view> 
+    </view>
+  </viw>
+</template>
+
+<!-- 相对定位 -->
+<template name="starStatic" >
+  <viw class="star-wrap static">
+    <view class="list">
+      <view class="item full"
+        wx:for="{{star}}" wx:for-index="idx" wx:key="idx"></view>
+      <view class="item empty"
+        wx:for="{{5 - star}}" wx:for-index="idx" wx:key="idx"></view>
+    </view>
+  </viw>
+</template>

@@ -1,0 +1,25 @@
+<view class="page new-list">
+    <div class="page__bd">
+        <view class="weui-panel">
+            <view class="weui-panel__hd img-hd" style="background-image:url({{banner.picurl}})">
+
+            </view>
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_small-appmsg">
+                    <view class="weui-cells weui-cells_in-small-appmsg">
+                        <view class="weui-cell weui-cell_access" hover-class="weui-cell_active"
+                         data-id="{{item.id}}"
+                         wx:if="{{list.length > 0}}"
+                         wx:for="{{list}}" wx:key="{{*this}}"
+                         bindtap="onListTodetail">
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view class="one-line">{{item.title}}</view>
+                            </view>
+                            <view class="weui-cell__hd"><image src="{{item.smallpic}}" style="width: 40px;height: 40px;margin-right: 5px" /></view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </div>
+</view>

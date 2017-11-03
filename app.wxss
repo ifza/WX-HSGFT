@@ -1,0 +1,44 @@
+/**app.wxss**/
+@import 'style/weui.wxss';
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+/* 自定义WeUI全局样式 */
+.weui-navbar__item{
+  background-color:#fff;
+}
+
+.weui-media-box__desc.more{
+  -webkit-line-clamp:999;
+}
+.reduce-bar.more{
+  transform:rotate(-45deg)!important;
+}
+/* swiper样式 */
+swiper-item.bg-img{
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.inline-block{
+  display:inline-block;
+}
+.align-center{
+  text-align: center;
+}
+.one-line{
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:1;
+}

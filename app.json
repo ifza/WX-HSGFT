@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/house/house",
+    "pages/houselist/houselist",
+    "pages/housedetail/housedetail",
+    "pages/housephoto/housephoto",
+    "pages/news/news",
+    "pages/newsdetail/newsdetail",
+    "pages/order/order",
+    "pages/ordersuccess/ordersuccess",
+    "pages/orderfail/orderfail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#7F6B59",
+    "navigationBarTitleText": "黄石购房通",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "backgroundColor": "#7F6B59",
+    "color": "#fff",
+    "selectedColor": "#201F1F",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/assets/images/home.png",
+        "selectedIconPath": "/assets/images/home-active.png"
+      },
+      {
+        "pagePath": "pages/house/house",
+        "text": "房产",
+        "iconPath": "/assets/images/house.png",
+        "selectedIconPath": "/assets/images/house-active.png"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "text": "资讯",
+        "iconPath": "/assets/images/news.png",
+        "selectedIconPath": "/assets/images/news-active.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "购房",
+        "iconPath": "/assets/images/order.png",
+        "selectedIconPath": "/assets/images/order-active.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "downloadFile": 20000
+  },
+  "debug": false
+}

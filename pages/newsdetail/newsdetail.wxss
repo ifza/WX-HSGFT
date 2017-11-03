@@ -1,0 +1,19 @@
+@import "../../lib/wxParse/wxParse.wxss";
+
+.weui-media-box__info__meta_extra{
+    color:#000;
+}
+.weui-media-box__desc{
+    color:#383838;
+    font-size:16px;
+}
+.imgwrap{
+    height:434rpx;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    margin:10px 0;
+}
+.weui-panel::after{
+    border:none;
+}

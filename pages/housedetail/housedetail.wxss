@@ -1,0 +1,106 @@
+/* 引入组件样式 */
+@import '../components/star/star.wxss';
+
+/* pages/housedetail/housedetail.wxss */
+/* 上部分 */
+.house-detail .weui-panel__hd {
+    font-size:18px;
+    color:#000;
+}
+.house-detail .weui-panel__hd::after,
+.house-detail .weui-cell::before{
+    left:0;
+}
+.house-detail .weui-media-box__title{
+    position:relative;
+}
+.house-detail .weui-media-box__title .reduce-bar{
+    content:" ";
+    display:inline-block;
+    height:6px;
+    width:6px;
+    border-width:2px 2px 0 0;
+    border-color:#000;
+    border-style:solid;
+    transform:rotate(135deg);
+    position:relative;
+    top:-2px;
+    position:absolute;
+    top:50%;
+    margin-top:-4px;
+    right:2px;    
+}
+.house-detail .weui-media-box__title.reducer .reduce-bar{
+    transform:rotate(-45deg);
+}
+.house-detail .weui-cell_link{
+    color:#707070;
+}
+
+/* 推荐楼盘 */
+.has-star{
+    margin-bottom:30px;
+}
+.has-star .weui-panel__hd{
+    font-size:18px;
+    color:#000;
+}
+.has-star .weui-panel__hd::after{
+    left:0;
+}
+.has-star.weui-panel::before{
+  border-top:none;
+}
+.weui-panel__hd.has-star.has-star{
+    color:#838383;
+}
+.weui-panel__hd.has-star::after,
+.weui-media-box::before,
+.weui-panel__ft .weui-cell::before{
+    left:0;
+}
+.has-star .weui-media-box__title{
+    position:relative;
+    display:block;
+    overflow: visible;
+}
+.has-star .weui-media-box__title .title-txt{
+    /* float:left; */
+}
+.has-star .weui-media-box__title .status{
+    display:inline-block;
+    display:none;
+    position:relaitve;
+    font-size:10px;
+    padding:0 2px;
+    margin-left:10px;
+    color:#fff;
+    border-radius:3px;
+    letter-spacing: 3px;
+}
+.has-star .weui-media-box__title .online{
+    background-color:#27A700;
+}
+.has-star .weui-media-box__title .without{
+    background-color:#FF0000;
+}
+.has-star .weui-media-box__title .star{
+    position:absolute;
+    top:50%;
+    right:0px;
+    display:block;
+    width:75px;
+    height:13px;
+    margin-top:-6.5px;
+    font-size:10px;
+    padding:0 2px;
+    color:#fff;
+    border-radius:3px;
+    letter-spacing: 3px;
+}
+.has-star .weui-media-box__title .star.score4{
+    /* background-image:url('../../assets/images/score4.jpg');
+    background-repeat: no-repeat;
+    background-size:100%; */
+}
+    
