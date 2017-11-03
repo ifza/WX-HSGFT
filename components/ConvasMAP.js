@@ -1,6 +1,6 @@
 var util = require('../utils/md5.js')
 
-//画布地图1
+//画布地图
 class ConvasMap {
 
     //默认参数设置
